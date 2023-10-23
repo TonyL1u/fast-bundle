@@ -1,6 +1,6 @@
-# fast-pack
+# fast-bundle
 
-`fast-pack` 是一个基于 [`rollup.js`]('https://www.rollupjs.com/') 封装的轻量级 js(ts) 库文件打包工具。
+`fast-bundle` 是一个基于 [`rollup.js`]('https://www.rollupjs.com/') 封装的轻量级 js(ts) 库文件打包工具。
 
 ## 特性
 
@@ -13,22 +13,22 @@
 
 ## 使用方法
 
-1. 安装 `fast-pack`
+1. 安装 `fast-bundle`
 
 ```bash
 # with npm
-npm install fast-pack --save-dev
+npm install fast-bundle --save-dev
 ```
 
 ```bash
 # with pnpm
-pnpm add fast-pack --save-dev
+pnpm add fast-bundle --save-dev
 ```
 
-2. 在项目根目录配置 `fast-pack.config.cjs` （可选）
+2. 在项目根目录配置 `fast-bundle.config.cjs` （可选）
 
 ```js
-// fast-pack.config.cjs
+// fast-bundle.config.cjs
 module.exports = {
     input: 'src/index.ts', // 库入口文件，默认为 src/index.ts
     outDir: 'dist' // 产物的输出目录，默认为 dist
@@ -111,7 +111,7 @@ export interface FastConfig {
 ```json
 {
     "scripts": {
-        "build": "fast-pack build"
+        "build": "fast-bundle build"
     }
 }
 ```
@@ -125,5 +125,5 @@ npm run build
 4. 构建命令
 
 ```bash
-fast-pack build [cjs | esm | umd | iife | types]
+fast-bundle build [cjs | esm | umd | iife | types]
 ```

@@ -27,7 +27,7 @@ export function exec(command: string, options: ExecSyncOptionsWithBufferEncoding
 }
 
 export function loggerOutput(prefix: string, msg: string, type: 'info' | 'error' = 'info') {
-    const tag = type === 'info' ? colors.cyan(`[fast-pack:${prefix}]`) : colors.red(`[fast-pack:${prefix}]`);
+    const tag = type === 'info' ? colors.cyan(`[fast-bundle:${prefix}]`) : colors.red(`[fast-bundle:${prefix}]`);
     return console.log(`${colors.dim(new Date().toLocaleTimeString())} ${tag} ${colors.green(msg)}`);
 }
 

@@ -3,7 +3,7 @@ import path from 'path';
 
 import type { FastConfig } from './types';
 
-export const CONFIG_PATH = path.resolve(process.cwd(), 'fast-pack.config.cjs');
+export const CONFIG_PATH = path.resolve(process.cwd(), 'fast-bundle.config.cjs');
 
 export const PKG_PATH = path.resolve(process.cwd(), 'package.json');
 

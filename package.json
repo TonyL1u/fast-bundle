@@ -1,6 +1,6 @@
 {
-    "name": "fast-pack",
-    "version": "0.0.1",
+    "name": "fast-bundle",
+    "version": "0.0.2",
     "type": "module",
     "main": "dist/index.cjs",
     "module": "dist/index.mjs",
@@ -17,11 +17,11 @@
         "preinstall": "npx only-allow pnpm"
     },
     "bin": {
-        "fast-pack": "./dist/index.cjs"
+        "fast-bundle": "./dist/index.cjs"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/TonyL1u/fast-pack"
+        "url": "https://github.com/TonyL1u/fast-bundle"
     },
     "size-limit": [
         {
