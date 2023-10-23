@@ -1,43 +1,14 @@
-# fast-pack
+import type { RollupBabelInputPluginOptions } from '@rollup/plugin-babel';
+import type { RollupOptions } from 'rollup';
 
-`fast-pack` 是一个基于 [`rollup.js`]('https://www.rollupjs.com/') 封装的轻量级 js(ts) 库文件打包工具。
+export enum Command {
+    BUILD = 'build',
+    CLEAN = 'clean',
+    WATCH = 'watch'
+}
 
-## 特性
+export type Format = 'cjs' | 'esm' | 'umd' | 'iife' | 'types';
 
--   🪶 轻量级 **2.67kB**（gzipped）
--   ⚙️ 零配置，开箱即用
--   🚀 基于 `rollup.js` ，构建速度快，产物体积小
--   ✨ 可扩展性强，支持自定义 `rollup` 插件以及多种格式单独构建
--   👀 集成了 Watch Mode，优化本地开发调试流程
--   🔥 可选使用 [swc](https://swc.rs/) 打包
-
-## 使用方法
-
-1. 安装 `fast-pack`
-
-```bash
-# with npm
-npm install fast-pack --save-dev
-```
-
-```bash
-# with pnpm
-pnpm add fast-pack --save-dev
-```
-
-2. 在项目根目录配置 `fast-pack.config.cjs` （可选）
-
-```js
-// fast-pack.config.cjs
-module.exports = {
-    input: 'src/index.ts', // 库入口文件，默认为 src/index.ts
-    outDir: 'dist' // 产物的输出目录，默认为 dist
-};
-```
-
-完整配置：
-
-```ts
 export interface FastConfig {
     /**
      * 打包文件入口。
@@ -104,26 +75,3 @@ export interface FastConfig {
         customScript?: string | (() => Promise<void>);
     };
 }
-```
-
-3. 在 `package.json` 中新建命令
-
-```json
-{
-    "scripts": {
-        "build": "fast-pack build"
-    }
-}
-```
-
-构建命令默认的输出格式为 `cjs` ，打包完毕后会在 `dist` 目录生成产物 `index.cjs` 。可以通过不同的命令参数输出不同格式的打包产物。
-
-```bash
-npm run build
-```
-
-4. 构建命令
-
-```bash
-fast-pack build [cjs | esm | umd | iife | types]
-```
